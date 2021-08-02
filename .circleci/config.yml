@@ -9,4 +9,9 @@ jobs:
       - checkout
       - run: pip3 install requirements.txt
       - snyk/scan
-workflows: null
+workflows:
+version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
