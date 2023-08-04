@@ -14,4 +14,4 @@ jobs:
         dd_app_key: ${{ secrets.DD_APP_KEY }}
         dd_api_key: ${{ secrets.DD_API_KEY }}
         dd_service: ${{ vars.DD_SERVICE }}
-        dd_site: "datadog.com"
+        dd_site: "datadoghq.com"
