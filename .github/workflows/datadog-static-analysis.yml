@@ -15,5 +15,6 @@ jobs:
           dd_api_key: ${{ secrets.DD_API_KEY }}
           dd_service: "headpage"
           dd_env: "prod"
+          dd_site: "datadoghq.com"
           cpu_count: 2
           enable_performance_statistics: false
