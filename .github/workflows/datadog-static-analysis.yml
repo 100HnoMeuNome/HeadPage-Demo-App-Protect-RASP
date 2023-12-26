@@ -16,4 +16,3 @@ jobs:
           dd_service: "headpage"
           dd_env: "prod"
           dd_site: "datadoghq.com"
-          cpu_count: 2
