@@ -1,6 +1,6 @@
-on: push
+on: [push]
 
-name: Software Composition Analysis
+name: Datadog Software Composition Analysis
 
 jobs:
   software-composition-analysis:
@@ -9,12 +9,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Generate SBOM and Upload
-      id: software-composition-analysis
+    - name: Check imported libraries are secure and compliant
+      id: datadog-software-composition-analysis
       uses: DataDog/datadog-sca-github-action@main
       with:
         dd_api_key: ${{ secrets.DD_API_KEY }}
         dd_app_key: ${{ secrets.DD_APP_KEY }}
-        dd_service: "headpage"
-        dd_env: "prod"
-        dd_site: "datadoghq.com"
+        dd_service: headpage
+        dd_env: prod
+        dd_site: datadoghq.com
