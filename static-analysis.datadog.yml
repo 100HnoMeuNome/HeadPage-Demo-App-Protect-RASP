@@ -1,6 +1,22 @@
 rulesets:
   - python-security
   - python-code-style
+  - python-flask
   - python-best-practices
   - python-inclusive
+  - javascript-common-security
+  - javascript-express
+  - javascript-inclusive
+  - javascript-node-security
+  - jsx-react
+  - csharp-security
+  - go-best-practices
+  - go-inclusive
+  - go-security
+  - rails-best-practices
+  - ruby-best-practices
+  - ruby-code-style
+  - ruby-inclusive
+  - ruby-security
+  - tsx-react
   - docker-best-practices
