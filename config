@@ -1,8 +1,7 @@
 # ~/.aws/credentials
 [default]
-aws_access_key_id=AKIAR2L7C7UFW2L7RUNJ
-aws_secret_access_key=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
-
+aws_access_key_id=
+aws_secret_access_key=
 # ~/.aws/config
 [default]
 region=us-west-2
