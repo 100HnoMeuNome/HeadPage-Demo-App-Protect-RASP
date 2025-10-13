@@ -152,9 +152,9 @@ def register(request):
             password=get_password_hash(request.POST.get('password'))
             try:
                 # +++ VULNERABLE TO SQL INJECTION +++
-                curs.executescript(
-                    "INSERT INTO social_user ('username','password','first_name','last_name') VALUES ('{}','{}','{}','{}')".format(
-                        username,password,first_name,last_name)
+                curs.execute(
+                    "INSERT INTO social_user (username, password, first_name, last_name) VALUES (%s, %s, %s, %s)",
+                    [username, password, first_name, last_name]
                 )
                 #+++ VULNERABLE TO UNVALIDATED REDIRECTS +++
                 return redirect(url_to_redirect)
