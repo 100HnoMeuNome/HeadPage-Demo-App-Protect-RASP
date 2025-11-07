@@ -1,0 +1,67 @@
+# .github/workflows/empty-commit.yml
+
+
+name: Daily Empty Commit
+
+
+on:
+
+  # Allows you to run this workflow manually from the Actions tab
+
+  workflow_dispatch:
+
+
+  # Triggers the workflow at 23:00 UTC every day
+
+  schedule:
+
+    - cron: '0 23 * * *'
+
+
+jobs:
+
+  create-commit:
+
+    runs-on: ubuntu-latest
+
+
+    # Set permissions for the job to allow writing to the repository contents
+
+    permissions:
+
+      contents: write
+
+
+    steps:
+
+      # Step 1: Check out the repository's code
+
+      - name: Checkout repository
+
+        uses: actions/checkout@v4
+
+        with:
+
+          ref: main # Make sure to target the 'main' branch
+
+
+      # Step 2: Configure Git user for the commit
+
+      - name: Configure Git
+
+        run: |
+
+          git config user.name "GitHub Actions Bot"
+
+          git config user.email "<>"
+
+
+      # Step 3: Create an empty commit and push it
+
+      - name: Create empty commit
+
+        run: |
+
+          git commit --allow-empty -m "chore: scheduled empty commit for trigger"
+
+          git push origin main
